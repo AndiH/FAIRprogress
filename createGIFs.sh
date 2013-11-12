@@ -8,7 +8,7 @@ YEAR_twodaysago=$(date --date "2 days ago" +%Y)
 MONTH_twodaysago=$(date --date "2 days ago" +%m)
 DAY_twodaysago=$(date --date "2 days ago" +%d)
 
-BASEDIR=$HOME/Documents/faircam
+BASEDIR=/var/www/vhosts/andreasherten.de/httpdocs/andreasherten/fair
 PREFIX="images"
 CURRENTDIR_yesterday=$YEAR_yesterday/$MONTH_yesterday/$DAY_yesterday
 COMPLETEPATH=$BASEDIR/$PREFIX/$CURRENTDIR_yesterday
@@ -17,9 +17,9 @@ COMPLETEPATH=$BASEDIR/$PREFIX/$CURRENTDIR_yesterday
 DELAY="20" #-delay $DELAY
 
 #create small GIF
-convert -resize 320 -coalesce -colors 16 -layers OptimizeFrame -compress lzw $COMPLETEPATH/*.jpg $COMPLETEPATH/output--small.gif
+/usr/local/bin/convert -resize 320 -coalesce -colors 16 -layers OptimizeFrame -compress lzw $COMPLETEPATH/*.jpg $COMPLETEPATH/output--small.gif
 #create big GIF
-convert -coalesce -layers OptimizeFrame -compress lzw $COMPLETEPATH/*.jpg $COMPLETEPATH/output.gif
+/usr/local/bin/convert -coalesce -layers OptimizeFrame -compress lzw $COMPLETEPATH/*.jpg $COMPLETEPATH/output.gif
 #echo $CURRENTPATH/$CURRENTDIR_yesterday/output_small.gif
 #echo "$CURRENTPATH/$YEAR_yesterday-$MONTH_yesterday-$DAY_yesterday--small.gif"
 
