@@ -1,1 +1,46 @@
-/Users/Andi/Sites/andiathome.de/andreasherten.de/fair.andreasherten.de/style.dirlist.css
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+body {
+	font-family: Open Sans, Myriad Pro, Verdana, Arial, sans-serif;
+	color: #57526b;
+	background: inherit;
+}
+
+thead td {
+	font-family: inherit;
+	color: #425ea0;
+	font-size: 2em;
+	padding: 30px 0;
+	font-weight: 200;
+}
+thead td strong {
+	font-weight: 400;
+}
+
+.file td {
+	font-weight: 400;
+}
+tbody td a {
+	font-size: 1.2em;
+}
+
+a {
+	font-weight: 400;
+	color: #402568;
+	font-size: inherit;
+}
+a:hover {
+	color: #931AE4;
+}
+#footer:hover {
+	opacity: 1.0;
+}
+#footer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	margin-top: 60px;
+	font-size: 0.9em;
+	opacity: 0.8;
+	text-align: center;
+}

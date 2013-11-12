@@ -1,1 +1,174 @@
-/Users/Andi/Sites/andiathome.de/andreasherten.de/fair.andreasherten.de/style.css
+body {
+	font-family: Open sans, Myriad Pro, Verdana, Arial, sans-serif;
+	color: #57526b;
+}
+
+#page {
+	margin: auto;
+	text-align: center;
+	width: 700px;
+}
+
+h1 {
+	font-weight: 200;
+	letter-spacing: 0.4em;
+	font-size: 3em;
+	color: #425ea0;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-family: 'Exo', arial, serif;
+}
+h2 {
+	font-weight: 200;
+	font-size: 1.2em;
+	color: #53596c;
+	margin-bottom: 30px;
+	letter-spacing: 0.1em;
+}
+h2 strong {
+	font-weight: 400;
+}
+#page p {
+	font-size: 1em;
+	font-weight: 200;
+}
+
+a {
+	color: #402568;
+}
+
+
+a:visited {
+	color: #555ed7;
+}
+a:hover, a:active {
+	color: #931AE4;
+}
+
+.centralimages {
+	position: relative;
+	width: 320px;
+	margin: auto;
+}
+#magnify {
+	position: absolute;
+	left: 295px;
+	top: 10px;
+	z-index: 6;
+}
+#magnify:hover {
+	cursor: pointer;
+}
+#picture {
+	position: relative;
+}
+
+p.date {
+	color: #425ea0;
+}
+
+.date small {
+	font-size: 0.8em;
+}
+p#sizeManipulation {
+	font-size: 0.9em;
+}
+input#alwaysBig {
+	margin-right: 5px;
+}
+
+#footer h2 {
+/* 	opacity: 0.8; */
+	margin-top: 80px;
+	margin-bottom: 0px;
+	cursor: pointer;
+}
+
+#footer p {
+	font-size: 0.9em;
+	margin-top: 10px;
+}
+#footer h2:hover {
+/* 	opacity: 1; */
+	color: #425ea0;
+}
+#footer h3 {
+	margin-top: 30px;
+	margin-bottom: 5px;
+	font-weight: 200;
+	font-size: 1.0em;
+}
+#bigAnswers {
+	display: none;
+	width: 500px;
+	margin: auto;
+	overflow: hidden;
+}
+
+
+footer {
+	text-align: center;
+	font-size: 0.6em;
+	opacity: 0.8;
+	margin-top: 50px;
+}
+
+footer:hover {
+	opacity: 1;
+}
+
+.code {
+	font-family: Courier New;
+	font-size: 0.9em;
+}
+
+/* tool tip stuff follows */
+.ui-tooltip, .arrow:after {
+    background: #7c6d9d;
+    border: 1px solid white;
+    text-align: center;
+  }
+  .ui-tooltip {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.8em;
+/*     font: bold 14px "Helvetica Neue", Sans-Serif; */
+/*     text-transform: uppercase; */
+    box-shadow: 0 0 7px #403545;
+  }
+  .arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+  }
+  .arrow.top {
+    top: -16px;
+    bottom: auto;
+  }
+  .arrow.left {
+    left: 20%;
+  }
+  .arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px green;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    tranform: rotate(45deg);
+  }
+  .arrow.top:after {
+    bottom: -20px;
+    top: auto;
+  }
