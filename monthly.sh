@@ -4,7 +4,7 @@ MONTHYESTERDAY=$(date --date "yesterday" +%B)
 YEAR_yesterday=$(date --date "yesterday" +%Y)
 
 BASEDIR=$HOME/Documents/faircam/images/2013/
-^^^^^^^^^^^^^^^^^^^
+
 CURRENTMONTH=${PWD##*/}
 filenameToWorkOn="12:00.jpg"
 
