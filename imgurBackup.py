@@ -28,7 +28,7 @@ class imgurBackup(object):
 		return datetime.date(int(current_year), int(current_month), int(current_day))
 
 	def getJpgsInDirectory(self, path):
-		return [os.path.join(path, file) for file in os.listdir(path) if file.endswith(".jpg")]
+		return sorted([os.path.join(path, file) for file in os.listdir(path) if file.endswith(".jpg")])
 
 	def writeToFile(self, file, data):
 		with open(file, 'w') as outputfile:
