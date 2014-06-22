@@ -1,18 +1,19 @@
+#!/usr/bin/env python
 import argparse
 import datetime
 import os
 import imgurHandler
 
 class imgurBackup(object):
-	"""Uploads the content of a date-separated path to Imgue"""
+	"""Uploads the content of a date-separated path to Imgur"""
 	def __init__(self, imgur, path):
 		super(imgurBackup, self).__init__()
 		self.imgur = imgur
 		self.path = self.normalizePath(path)
 		self.date = self.generateDateFromPath(self.path)
-		self.listOfJgs = self.getJpgsInDirectory(self.path)
+		self.listOfJgps = self.getJpgsInDirectory(self.path)
 		self.album = self.imgur.createFairAlbum(self.date)
-		self.imgur.uploadJpgsToAlbum(self.listOfJgs, self.album)
+		self.imgur.uploadJpgsToAlbum(self.listOfJgps, self.album)
 		self.writeAlbumInfoFile()
 
 	def normalizePath(self, path):
@@ -37,7 +38,8 @@ class imgurBackup(object):
 
 	def writeAlbumInfoFile(self):
 		text = ["The individual pictures used too much space on the server's harddisk.", "We moved them.", "You can find them here: " + self.album.link, "Additionally, there's an offline backup.", "Just contact the author to get them!", "Cheers, Andreas"]
-		self.writeToFile(os.path.join(self.path, "where_are_the_pictures.txt"), text) 
+		self.writeToFile(os.path.join(self.path, "where_are_the_pictures.txt"), text)
+		self.writeToFile(os.path.join(self.path, "link.url"), self.album.link)
 
 def main(args):
 	imgur = imgurHandler.imgurHandler(args.initialize, args.imgur_credentials_json)
