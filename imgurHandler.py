@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import pyimgur
 import json
 import webbrowser
