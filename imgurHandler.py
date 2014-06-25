@@ -24,7 +24,6 @@ class imgurHandler(object):
 
 	def jsonWriter(self, file, data):
 		with open(file, 'w') as outputfile:
-			print data
 			json.dump(data, outputfile)
 
 	def initializeTokens(self):
