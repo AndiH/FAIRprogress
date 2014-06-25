@@ -10,7 +10,7 @@ class imgurHandler(object):
 		self.credentials = self.jsonParser(credential_file)
 		self.im = pyimgur.Imgur(self.credentials["clientid"], self.credentials["clientsecret"])
 		if (initialize):
-			self.credentials = self.initializeTokens(self.im, self.credentials)
+			self.credentials = self.initializeTokens()
 		if not (initialize):
 			self.im.refresh_token = self.credentials["refresh_token"]
 			self.credentials["access_token"] = self.im.refresh_access_token()
@@ -24,6 +24,7 @@ class imgurHandler(object):
 
 	def jsonWriter(self, file, data):
 		with open(file, 'w') as outputfile:
+			print data
 			json.dump(data, outputfile)
 
 	def initializeTokens(self):
@@ -33,6 +34,7 @@ class imgurHandler(object):
 		access_token, refresh_token = self.im.exchange_pin(pin)
 		self.credentials["access_token"] = access_token
 		self.credentials["refresh_token"] = refresh_token
+		return self.credentials
 
 	def createFairAlbum(self, date):
 		return self.im.create_album("FAIRprogress of " + date.strftime('%Y-%m-%d'), "Raw pictures used to generate the gif located at http://fair.andreasherten.de/images/" + str(date.year) + "/" + str(date.month).zfill(2) + "/" + str(date.day).zfill(2) + ".")
